@@ -10,16 +10,13 @@ import (
 	"github.com/spf13/cobra"
 )
 
-//go:embed templates/workspace.yaml.gotmpl
-var initFile string
-
 func init() {
-	rootCmd.AddCommand(initializeCmd)
+	rootCmd.AddCommand(pullCmd)
 }
 
-var initializeCmd = &cobra.Command{
-	Use:   "init",
-	Short: "Initialize directory as root of the workspace",
+var pullCmd = &cobra.Command{
+	Use:   "pull",
+	Short: "Pull directories",
 	Long:  "test",
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("Initializing workspace")
